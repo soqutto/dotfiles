@@ -222,20 +222,19 @@ let g:lightline = {
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component': {
-      \   'readonly': '%{&readonly?"⭤":""}',
+      \   'readonly': '%{&readonly?"":""}',
       \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive'
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
 function! LightlineFugitive()
     if exists("*fugitive#head")
         let branch = fugitive#head()
-        return branch !=# '' ? '⭠ '.branch :  ''
     endif
     return ''
 endfunction
