@@ -13,7 +13,7 @@ install(){
     }
 
     symlink(){
-        [ -e "$2" ] || ln -si "$1" "$2"
+        [ -e "$2" ] || ln -sf "$1" "$2"
     }
 
     if [ -d "$dotfiles" ]; then
