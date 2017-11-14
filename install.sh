@@ -3,7 +3,7 @@
 # soqutto/dotfiles Repository
 # Install Script
 
-set -eu
+set -eux
 
 install(){
     dotfiles=$HOME/.dotfiles
@@ -22,12 +22,18 @@ install(){
         git clone https://github.com/soqutto/dotfiles "$dotfiles"
     fi
 
+    mkdir -p $HOME/.vim/dein
+
+    curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh \
+    | sh -s -- $HOME/.vim/dein
+
     has git  && symlink "$dotfiles/.gitconfig"      "$HOME/.gitconfig"
-    has vim  && symlink "$dotfiles/.vimrc"          "$HOME/.vimrc"
-    has vim  && symlink "$dotfiles/.gvimrc"         "$HOME/.gvimrc"
-    has vim  && symlink "$dotfiles/template"        "$HOME/.vim"
     has bash && symlink "$dotfiles/.bash_profile"   "$HOME/.bash_profile"
     has bash && symlink "$dotfiles/.bashrc"         "$HOME/.bashrc"
+    has vim  && symlink "$dotfiles/.vimrc"          "$HOME/.vimrc"
+    has vim  && symlink "$dotfiles/.gvimrc"         "$HOME/.gvimrc"
+
+    has vim  && symlink "$dotfiles/template"        "$HOME/.vim"
 
 }
 
