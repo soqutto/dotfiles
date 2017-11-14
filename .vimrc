@@ -201,7 +201,7 @@ autocmd BufNewFile *.py 0r $HOME/.vim/template/python.txt
 " 参考: http://qiita.com/smison/items/2ee7aaa88299f6972c52
 " 参考: http://qiita.com/smison/items/58a18b2bb27f2eff2f2a
 autocmd BufNewFile,BufRead *.rb nnoremap <F5> :!ruby %<CR>
-autocmd BufNewFile,BufRead *.py nnoremap <F5> :!python %<CR>
+autocmd BufNewFile,BufRead *.py nnoremap <F5> :!python3 %<CR>
 autocmd BufNewFile,BufRead *.pl nnoremap <F5> :!perl %<CR>
 
 " ヤンクでクリップボードにコピーする
