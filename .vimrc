@@ -95,6 +95,8 @@ set breakindent
 " Backspaceの有効化
 set backspace=indent,eol,start
 
+set ambiwidth=single
+
 " ＊キーバインドの設定
 " 入力モードで<C-h/j/k/l>のカーソル移動を有効にする
 inoremap <C-j> <Down>
