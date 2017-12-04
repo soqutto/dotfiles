@@ -56,7 +56,7 @@ endif
 " 互換モードのオフ
 set nocompatible
 " 文字コードをUTF-8に設定
-set fenc=utf=8
+set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
