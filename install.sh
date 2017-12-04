@@ -32,6 +32,8 @@ install(){
     mkdir -p $HOME/.cache
     mkdir -p $HOME/.local/share
 
+    # dein.vim install
+    mkdir -p $HOME/.vim/dein
     curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh \
     | sh -s -- $HOME/.vim/dein
 
