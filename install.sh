@@ -19,6 +19,8 @@ install(){
     symlink_dir(){
         [ -e "$2" ] || ln -sf "$1" "$2"
     }
+
+    # cloning and unpacking settings
     if [ -d "$dotfiles" ]; then
         (cd "$dotfiles" && git pull --rebase)
     else
