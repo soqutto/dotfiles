@@ -8,10 +8,10 @@ set lines=45
 " ウィンドウの横幅
 set columns=150
 " カラースキーム
-colorscheme solarized
-" ダーク系のカラースキームを使う
-set background=light
-let g:solarized_contrast='high'
+colorscheme japanesque
+" カラースキームの設定
+"set background=light
+let g:solarized_contrast='normal'
 
 " フォントの設定
-set guifont=Ricty\ for\ Powerline\ 12
+set guifont=Ricty\ Regular\ for\ Powerline:h14

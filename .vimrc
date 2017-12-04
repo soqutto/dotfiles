@@ -30,7 +30,10 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('davidhalter/jedi-vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('vim-scripts/guicolorscheme.vim')
+
+" Colorschemes
 call dein#add('altercation/vim-colors-solarized')
+call dein#add('aereal/vim-colors-japanesque')
 
 " You can specify revision/branch/tag.
 "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -216,7 +219,7 @@ set laststatus=2
 set t_Co=256
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'powerline',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
@@ -251,6 +254,6 @@ let solarized_contrast='normal'
 set background=light
 
 " カラースキームの設定
-colorscheme solarized
+colorscheme default
 
 " end of .vimrc
