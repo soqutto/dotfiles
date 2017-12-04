@@ -22,7 +22,10 @@ install(){
         git clone https://github.com/soqutto/dotfiles "$dotfiles"
     fi
 
-    mkdir -p $HOME/.vim/dein
+    # setup for XDG Base Directory
+    mkdir -p $HOME/.config
+    mkdir -p $HOME/.cache
+    mkdir -p $HOME/.local/share
 
     curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh \
     | sh -s -- $HOME/.vim/dein
