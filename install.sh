@@ -30,6 +30,10 @@ install(){
     curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh \
     | sh -s -- $HOME/.vim/dein
 
+    # make vim temporary directories
+    mkdir -p $HOME/.cache/vim/undo
+    mkdir -p $HOME/.cache/vim/swap
+
     has git  && symlink "$dotfiles/.gitconfig"      "$HOME/.gitconfig"
     has bash && symlink "$dotfiles/.bash_profile"   "$HOME/.bash_profile"
     has bash && symlink "$dotfiles/.bashrc"         "$HOME/.bashrc"

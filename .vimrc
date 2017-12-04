@@ -59,8 +59,12 @@ set nocompatible
 set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
-" スワップファイルを作らない
-set noswapfile
+" スワップファイルの設定
+set swapfile
+set directory=$HOME/.cache/vim/swap
+" アンドゥファイルの設定
+set undofile
+set undodir=$HOME/.cache/vim/undo
 " 編集中のファイルが変更されたら自動で読みなおす
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
