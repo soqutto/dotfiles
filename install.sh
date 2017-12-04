@@ -16,6 +16,9 @@ install(){
         [ -e "$2" ] || ln -sf "$1" "$2"
     }
 
+    symlink_dir(){
+        [ -e "$2" ] || ln -sf "$1" "$2"
+    }
     if [ -d "$dotfiles" ]; then
         (cd "$dotfiles" && git pull --rebase)
     else
@@ -40,7 +43,7 @@ install(){
     has vim  && symlink "$dotfiles/.vimrc"          "$HOME/.vimrc"
     has vim  && symlink "$dotfiles/.gvimrc"         "$HOME/.gvimrc"
 
-    has vim  && symlink "$dotfiles/template"        "$HOME/.vim"
+    has vim  && symlink_dir "$dotfiles/template"        "$HOME/.vim"
 
 }
 
