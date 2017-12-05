@@ -235,7 +235,7 @@ endif
 
 " ＊ファイルタイプ別の設定
 " Python用文字コード指定テンプレート
-autocmd BufNewFile *.py 0r $HOME/.vim/template/python.txt
+autocmd BufNewFile *.py 0r template/python.txt
 
 " ＊ユーザー定義コマンドの設定
 " 編集中のスクリプトを<C-e>で実行する
