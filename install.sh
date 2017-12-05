@@ -37,7 +37,8 @@ install(){
   curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh \
   | sh -s -- $HOME/.cache/dein
 
-  # make vim temporary directories
+  # make vim directories
+  mkdir -p $HOME/.config/vim
   mkdir -p $HOME/.cache/vim/undo
   mkdir -p $HOME/.cache/vim/swap
 
@@ -47,7 +48,7 @@ install(){
   has vim  && symlink "$dotfiles/.vimrc"          "$HOME/.vimrc"
   has vim  && symlink "$dotfiles/.gvimrc"         "$HOME/.gvimrc"
 
-  has vim  && symlink "$dotfiles/template"        "$HOME/.vim"
+  has vim  && symlink "$dotfiles/template"        "$HOME/.config/vim"
 
 }
 

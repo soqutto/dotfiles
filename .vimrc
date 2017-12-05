@@ -3,16 +3,32 @@
 "
 " 参考: http://qiita.com/mfujimori/items/9fd41bcd8d1ce9170301
 
+" XDG Base Directory Specification に準拠した設定
+if empty($XDG_CACHE_HOME)
+  let $XDG_CACHE_HOME = '~/.cache'
+endif
+
+if empty($XDG_CONFIG_HOME)
+  let $XDG_CONFIG_HOME = '~/.config'
+endif
+
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath-=~/.vim
+set runtimepath^=$XDG_CONFIG_HOME/vim
+set runtimepath-=~/.vim/after
+set runtimepath+=$XDG_CONFIG_HOME/vim/after
+
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$XDG_CACHE_HOME/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin($HOME . "/.vim/dein")
+call dein#begin($XDG_CACHE_HOME . "/dein")
 
 " Let dein manage dein
 " Required:
