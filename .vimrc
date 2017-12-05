@@ -28,34 +28,38 @@ endif
 set runtimepath+=$XDG_CACHE_HOME/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin($XDG_CACHE_HOME . "/dein")
+if dein#load_state($XDG_CACHE_HOME . "/dein")
+  call dein#begin($XDG_CACHE_HOME . "/dein")
 
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+  " Let dein manage dein
+  " Required:
+  call dein#add('Shougo/dein.vim')
 
-" Add or remove your plugins here:
-call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('Shougo/vimshell')
-call dein#add('kana/vim-submode')
-"call dein#add('Lokaltog/vim-powerline')
-call dein#add('itchyny/lightline.vim')
-call dein#add('davidhalter/jedi-vim')
-call dein#add('tpope/vim-fugitive')
-call dein#add('vim-scripts/guicolorscheme.vim')
+  " Add or remove your plugins here:
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/vimshell')
+  call dein#add('kana/vim-submode')
+  "call dein#add('Lokaltog/vim-powerline')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('davidhalter/jedi-vim')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('vim-scripts/guicolorscheme.vim')
 
-" Colorschemes
-call dein#add('altercation/vim-colors-solarized')
-call dein#add('aereal/vim-colors-japanesque')
+  " Colorschemes
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('aereal/vim-colors-japanesque')
 
-" You can specify revision/branch/tag.
-"call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  " You can specify revision/branch/tag.
+  "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-" Required:
-call dein#end()
+  " Required:
+  call dein#end()
+  call dein#save_state()
+
+endif
 
 " Required:
 filetype plugin indent on
