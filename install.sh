@@ -15,7 +15,7 @@ install(){
   symlink(){
     if [ -d "$2" ]; then
       ln -sf "$1" "$2"
-    elif [ -f "$2" ]; then
+    elif ! [ -f "$2" ]; then
       ln -sf "$1" "$2"
     fi
   }
