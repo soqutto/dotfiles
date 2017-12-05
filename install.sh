@@ -13,11 +13,11 @@ install(){
     }
 
     symlink(){
-        [ -e "$2" ] || ln -sf "$1" "$2"
-    }
-
-    symlink_dir(){
-        [ -e "$2" ] || ln -sf "$1" "$2"
+        if ! [ -f "$2" ]; then
+            ln -sf "$1" "$2"
+        elif [ -d "$2" ]; then
+            ln -sf "$1" "$2"
+        fi
     }
 
     # cloning and unpacking settings
@@ -47,7 +47,7 @@ install(){
     has vim  && symlink "$dotfiles/.vimrc"          "$HOME/.vimrc"
     has vim  && symlink "$dotfiles/.gvimrc"         "$HOME/.gvimrc"
 
-    has vim  && symlink_dir "$dotfiles/template"        "$HOME/.vim"
+    has vim  && symlink "$dotfiles/template"        "$HOME/.vim"
 
 }
 
