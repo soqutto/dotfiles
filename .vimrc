@@ -168,15 +168,27 @@ nnoremap <Space>v :split<CR><C-w>j:VimShell<CR>
 set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
-" 行頭以外のTab文字の表示幅 (スペースn個分)
+" Tab文字の表示幅 (スペースn個分)
 set tabstop=4
+" Tab文字入力時のインデント幅
 set softtabstop=4
-" 行頭でのTab文字の表示幅
+" 自動インデント時のインデント幅
 set shiftwidth=4
-
 " ＊ファイルタイプ別のインデント設定
-" Pythonで#でインデント解除しない
-autocmd FileType python :inoremap # X#
+augroup fileTypeIndent
+  autocmd FileType html       setlocal sw=2 sts=2 ts=2
+  autocmd FileType css        setlocal sw=2 sts=2 ts=2
+  autocmd FileType scss       setlocal sw=2 sts=2 ts=2
+  autocmd FileType sass       setlocal sw=2 sts=2 ts=2
+  autocmd FileType javascript setlocal sw=2 sts=2 ts=2
+  autocmd FileType json       setlocal sw=2 sts=2 ts=2
+  autocmd FileType ruby       setlocal sw=2 sts=2 ts=2
+  autocmd FileType vim        setlocal sw=2 sts=2 ts=2
+  autocmd FileType sh         setlocal sw=2 sts=2 ts=2
+  autocmd FileType python     setlocal sw=4 sts=4 ts=4
+  " Pythonで#でインデント解除しない
+  autocmd FileType python :inoremap # X#
+augroup END
 
 " ＊検索設定
 " 検索文字列が小文字の場合大文字小文字の区別なく検索
