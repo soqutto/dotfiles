@@ -13,5 +13,8 @@ colorscheme japanesque
 "set background=light
 let g:solarized_contrast='normal'
 
+" 透明度の設定
+set transparency=10
+
 " フォントの設定
 set guifont=Ricty\ Regular\ for\ Powerline:h14

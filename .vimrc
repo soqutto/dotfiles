@@ -292,6 +292,6 @@ let solarized_contrast='normal'
 set background=light
 
 " カラースキームの設定
-colorscheme default
+colorscheme japanesque
 
 " end of .vimrc
