@@ -32,6 +32,9 @@ install(){
   mkdir -p $HOME/.cache
   mkdir -p $HOME/.local/share
 
+  # make zsh config directories
+  mkdir -p $HOME/.cache/zsh
+
   # dein.vim install
   mkdir -p $HOME/.cache/dein
   curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh \
@@ -45,6 +48,8 @@ install(){
   has git  && symlink "$dotfiles/.gitconfig"      "$HOME/.gitconfig"
   has bash && symlink "$dotfiles/.bash_profile"   "$HOME/.bash_profile"
   has bash && symlink "$dotfiles/.bashrc"         "$HOME/.bashrc"
+  has zsh  && symlink "$dotfiles/.zshenv"         "$HOME/.zshenv"
+  has zsh  && symlink "$dotfiles/.zshrc"          "$HOME/.zshrc"
   has vim  && symlink "$dotfiles/.vimrc"          "$HOME/.vimrc"
   has vim  && symlink "$dotfiles/.gvimrc"         "$HOME/.gvimrc"
 
