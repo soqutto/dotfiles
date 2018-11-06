@@ -8,7 +8,7 @@ set lines=45
 " ウィンドウの横幅
 set columns=150
 " カラースキーム
-colorscheme japanesque
+colorscheme kalisi
 " カラースキームの設定
 "set background=light
 let g:solarized_contrast='normal'

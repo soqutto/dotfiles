@@ -44,13 +44,14 @@ if dein#load_state($XDG_CACHE_HOME . "/dein")
   call dein#add('kana/vim-submode')
   "call dein#add('Lokaltog/vim-powerline')
   call dein#add('itchyny/lightline.vim')
-  call dein#add('davidhalter/jedi-vim')
-  call dein#add('tpope/vim-fugitive')
+  "call dein#add('davidhalter/jedi-vim')
+  "call dein#add('tpope/vim-fugitive')
   call dein#add('vim-scripts/guicolorscheme.vim')
 
   " Colorschemes
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('aereal/vim-colors-japanesque')
+  call dein#add('freeo/vim-kalisi')
 
   " You can specify revision/branch/tag.
   "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -79,12 +80,13 @@ set nocompatible
 set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
+set backupdir=$XDG_CACHE_HOME/vim/backup
 " スワップファイルの設定
 set swapfile
-set directory=$HOME/.cache/vim/swap
+set directory=$XDG_CACHE_HOME/vim/swap
 " アンドゥファイルの設定
 set undofile
-set undodir=$HOME/.cache/vim/undo
+set undodir=$XDG_CACHE_HOME/vim/undo
 " 編集中のファイルが変更されたら自動で読みなおす
 set autoread
 " バッファが編集中でもその他のファイルを開けるように
@@ -292,6 +294,6 @@ let solarized_contrast='normal'
 set background=light
 
 " カラースキームの設定
-colorscheme japanesque
+colorscheme kalisi
 
 " end of .vimrc
