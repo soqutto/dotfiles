@@ -3,13 +3,18 @@
 "
 " 参考: http://qiita.com/mfujimori/items/9fd41bcd8d1ce9170301
 
+" dotfilesリポジトリのベースディレクトリ設定
+if empty($DOTFILES_ROOT)
+  let $DOTFILES_ROOT = $HOME . '/.dotfiles'
+endif
+
 " XDG Base Directory Specification に準拠した設定
 if empty($XDG_CACHE_HOME)
-  let $XDG_CACHE_HOME = '~/.cache'
+  let $XDG_CACHE_HOME = $HOME . '/.cache'
 endif
 
 if empty($XDG_CONFIG_HOME)
-  let $XDG_CONFIG_HOME = '~/.config'
+  let $XDG_CONFIG_HOME = $HOME . '/.config'
 endif
 
 set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
@@ -237,7 +242,7 @@ endif
 
 " ＊ファイルタイプ別の設定
 " Python用文字コード指定テンプレート
-autocmd BufNewFile *.py 0r template/python.txt
+autocmd BufNewFile *.py 0r $DOTFILES_ROOT/template/python.txt
 
 " ＊ユーザー定義コマンドの設定
 " 編集中のスクリプトを<C-e>で実行する

@@ -44,6 +44,7 @@ install(){
   mkdir -p $HOME/.config/vim
   mkdir -p $HOME/.cache/vim/undo
   mkdir -p $HOME/.cache/vim/swap
+  mkdir -p $HOME/.cache/vim/backup
 
   has git  && symlink "$dotfiles/.gitconfig"      "$HOME/.gitconfig"
   has bash && symlink "$dotfiles/.bash_profile"   "$HOME/.bash_profile"
