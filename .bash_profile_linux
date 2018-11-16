@@ -4,6 +4,9 @@ export DOTFILES_ROOT=$HOME/.dotfiles
 # prompt definition
 export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
 
+# PATH for local installation applications:
+export PATH=$HOME/local/bin:$PATH
+
 # added by YS 20161108
 export PYTHONPATH=PYTHONPATH:/usr/lib/x86_64-linux-gnu/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/cuda/lib64
