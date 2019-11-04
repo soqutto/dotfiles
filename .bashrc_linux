@@ -1,6 +1,4 @@
 # .bashrc for Linux
-export TERM=xterm-color
-
 alias ls='ls -F --color=auto'
 alias la='ls -A --color=auto'
 alias ll='ls -laF --color=auto'

@@ -1,5 +1,3 @@
-export TERM=xterm-256color
-
 # OS判定
 if [ "$(uname)" == 'Darwin' ]; then
     OS='mac'
