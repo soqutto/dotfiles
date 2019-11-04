@@ -56,6 +56,8 @@ install(){
 
   has vim  && symlink "$dotfiles/template"        "$HOME/.config/vim"
 
+  has tmux && symlink "$dotfiles/.tmux.conf"      "$HOME/.tmux.conf"
+
 }
 
 install
