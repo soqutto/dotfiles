@@ -14,5 +14,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 # rbenv setting
 eval "$(rbenv init -)"
 
+# X11 Display setting
+export DISPLAY=:0.0
+
 export EDITOR=vim
 export PAGER=less
