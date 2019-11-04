@@ -125,8 +125,12 @@ set showbreak=↪
 set breakindent
 " Backspaceの有効化
 set backspace=indent,eol,start
-
+" 全角特殊記号の半角表示設定
 set ambiwidth=single
+
+" マウスの設定
+set mouse=a
+set ttymouse=sgr
 
 " ＊キーバインドの設定
 " 入力モードで<C-h/j/k/l>のカーソル移動を有効にする
