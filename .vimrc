@@ -305,4 +305,11 @@ set background=light
 " カラースキームの設定
 colorscheme kalisi
 
+" 半透明シェル用の背景色オミット設定
+highlight Normal      ctermbg=none
+highlight NonText     ctermbg=none
+highlight LineNr      ctermbg=none
+highlight Folded      ctermbg=none
+highlight EndOfBuffer ctermbg=none
+
 " end of .vimrc
