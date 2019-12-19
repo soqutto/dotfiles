@@ -52,6 +52,7 @@ if dein#load_state($XDG_CACHE_HOME . "/dein")
   "call dein#add('davidhalter/jedi-vim')
   "call dein#add('tpope/vim-fugitive')
   call dein#add('vim-scripts/guicolorscheme.vim')
+  call dein#add('thinca/vim-quickrun')
 
   " Colorschemes
   call dein#add('altercation/vim-colors-solarized')
@@ -246,18 +247,49 @@ endif
 
 " ＊ファイルタイプ別の設定
 " Python用文字コード指定テンプレート
-autocmd BufNewFile *.py 0r $DOTFILES_ROOT/template/python.txt
+augroup fileTypeTemplate
+  autocmd!
+  autocmd BufNewFile *.py 0r $DOTFILES_ROOT/template/python.txt
+augroup END
 
 " ＊ユーザー定義コマンドの設定
 " 編集中のスクリプトを<C-e>で実行する
-" 参考: http://qiita.com/smison/items/2ee7aaa88299f6972c52
-" 参考: http://qiita.com/smison/items/58a18b2bb27f2eff2f2a
-autocmd BufNewFile,BufRead *.rb nnoremap <F5> :!ruby %<CR>
-autocmd BufNewFile,BufRead *.py nnoremap <F5> :!python3 %<CR>
-autocmd BufNewFile,BufRead *.pl nnoremap <F5> :!perl %<CR>
+" 参考: https://maku77.github.io/vim/settings/autocmd-exec.html
+augroup fileTypeExec
+  autocmd FileType ruby   nnoremap <buffer> <F5> :!ruby %<CR>
+  autocmd FileType python nnoremap <buffer> <F5> :!python3 %<CR>
+  autocmd FileType perl   nnoremap <buffer> <F5> :!perl %<CR>
+  autocmd FileType c      nnoremap <buffer> <F5> :DoClangC <CR>
+  autocmd FileType cpp    nnoremap <buffer> <F5> :DoClangCpp <CR>
+augroup END
+
+command! DoClangC call s:DoClangC()
+command! DoClangCpp call s:DoClangCpp()
+
+function! s:DoClangC()
+  if has("win32") || has("win64") || has("win32unix")
+    :!clang % -std=c11 -o %<.exe && %<.exe
+  else
+    :!clang % -std=c11 -o %<.out && ./%<.out
+  endif
+endfunction
+
+function! s:DoClangCpp()
+  if has("win32") || has("win64") || has("win32unix")
+    :!clang++ % -std=c++14 -o %<.exe && %<.exe
+  else
+    :!clang++ % -std=c++14 -o %<.out && ./%<.out
+  endif
+endfunction
+
 
 " ヤンクでクリップボードにコピーする
 set clipboard=unnamed,autoselect
+
+" quickrun.vim用の設定
+nnoremap <buffer> <F7> :QuickRun <CR>
+
+let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
 
 
 " jedi-vim用の設定
