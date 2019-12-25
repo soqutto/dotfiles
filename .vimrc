@@ -175,8 +175,10 @@ call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 " バッファ移動
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
+nnoremap <silent> sN :<C-u>bnext<CR>
+nnoremap <silent> sP :<C-u>bprev<CR>
+nnoremap <silent> [b :<C-u>bprev<CR>
+nnoremap <silent> ]b :<C-u>bnext<CR>
 " タブページ
 nnoremap st :<C-u>tabnew<CR>
 "nnoremap sT :<C-u>Unite tab<CR>
