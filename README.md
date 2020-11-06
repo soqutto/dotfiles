@@ -6,4 +6,4 @@ Easy Deploying Development Environment
 
 For install, please type this command in your terminal:
 
-    $ bash -c "$(curl -fsSL dot.mizutama.pw)"
+    $ bash -c "$(curl -fsSL df.soqutto.org)"
