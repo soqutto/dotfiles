@@ -337,7 +337,12 @@ let solarized_contrast='normal'
 set background=light
 
 " カラースキームの設定
-colorscheme kalisi
+if $SSH_CONNECTION != ""
+  " SSH接続時デフォルトカラーで表示
+  colorscheme default
+else
+  colorscheme kalisi
+endif
 
 " 半透明シェル用の背景色オミット設定
 highlight Normal      ctermbg=NONE guibg=NONE
