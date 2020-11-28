@@ -337,8 +337,8 @@ let solarized_contrast='normal'
 set background=light
 
 " カラースキームの設定
-if $SSH_CONNECTION != ""
-  " SSH接続時デフォルトカラーで表示
+if $WSL_HOST != "" && $SSH_CONNECTION != ""
+  " WSLにSSH接続時デフォルトカラーで表示
   colorscheme default
 else
   colorscheme kalisi
