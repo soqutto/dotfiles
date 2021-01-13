@@ -6,9 +6,9 @@
     graph = log --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
     stat = status
 
-#[url "github:"]
-#    InsteadOf = https://github.com/
-#    InsteadOf = git@github.com:
+[url "github:"]
+    InsteadOf = https://github.com/
+    InsteadOf = git@github.com:
 
 [color]
     ui = true
