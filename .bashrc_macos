@@ -1,9 +1,16 @@
 # .bashrc for macOS
+
+# prompt definition
 export PS1="\[\e[35m\]\u@\h:\[\e[34m\]\W \[\e[31m\]\$\[\e[0m\] "
 export PS2="\[\e[31m\]> \[\e[0m\]"
 
+# alias setting
 alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -laG'
 
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+
+# EDITOR, PAGER setting
+export EDITOR=vim
+export PAGER=less

@@ -27,3 +27,7 @@ alias ll='ls -lG'
 alias la='ls -laG'
 
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+
+# EDITOR, PAGER settings
+export EDITOR=vim
+export PAGER=less

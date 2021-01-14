@@ -1,4 +1,6 @@
 # .bashrc for Linux
+
+# alias setting
 alias ls='ls -F --color=auto'
 alias la='ls -A --color=auto'
 alias ll='ls -laF --color=auto'
@@ -10,3 +12,6 @@ alias df='df -h'
 
 alias ps='ps --sort=start_time'
 
+# EDITOR, PAGER setting
+export EDITOR=vim
+export PAGER=less
