@@ -53,6 +53,8 @@ if dein#load_state($XDG_CACHE_HOME . "/dein")
   "call dein#add('tpope/vim-fugitive')
   call dein#add('vim-scripts/guicolorscheme.vim')
   call dein#add('thinca/vim-quickrun')
+  call dein#add('vim-scripts/JavaScript-Indent')
+  call dein#add('othree/yajs.vim')
 
   " Colorschemes
   call dein#add('altercation/vim-colors-solarized')
@@ -254,6 +256,7 @@ endif
 augroup fileTypeTemplate
   autocmd!
   autocmd BufNewFile *.py 0r $DOTFILES_ROOT/template/python.txt
+  autocmd BufNewFile *.html 0r $DOTFILES_ROOT/template/html.txt
 augroup END
 
 " ＊ユーザー定義コマンドの設定
